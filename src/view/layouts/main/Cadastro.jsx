@@ -9,6 +9,7 @@ function Cadastro() {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
+
     const handleDescricaoChange = (e) => {
         setDescricao(e.target.value);
     };
@@ -51,28 +52,32 @@ function Cadastro() {
 
     return (
         <div className="container">
+
             <Flash type="error" message={error} setMessage={setError} />
             {success && <Flash type="success" message={success} setMessage={setSuccess} />}
-            <div className="container-center-center">
-                <div className="container">
-                    <h3 className="text-center">Cadastrar produto</h3>
-                    <form className="mt-3" onSubmit={handleSubmit}>
-                        <TextInput
-                            label="Descrição"
-                            type="text"
-                            placeholder="Descrição do produto"
-                            value={descricao}
-                            onChange={handleDescricaoChange}
-                        />
-                        <TextInput
-                            label="Quantidade"
-                            type="number"
-                            placeholder="Quantidade"
-                            value={quantidade}
-                            onChange={handleQuantidadeChange}
-                        />
-                        <button type="submit" className="btn btn-primary btn-block">Cadastrar produto</button>
-                    </form>
+            
+            <div  className="container mt-5 justify-content-center align-items-center d-flex">
+                <div className="container-center-center">
+                    <div className="container">
+                        <h3 className="text-center">Cadastrar produto</h3>
+                        <form className="mt-3" onSubmit={handleSubmit}>
+                            <TextInput
+                                label="Descrição"
+                                type="text"
+                                placeholder="Descrição do produto"
+                                value={descricao}
+                                onChange={handleDescricaoChange}
+                            />
+                            <TextInput
+                                label="Quantidade"
+                                type="number"
+                                placeholder="Quantidade"
+                                value={quantidade}
+                                onChange={handleQuantidadeChange}
+                            />
+                            <button type="submit" className="btn btn-primary btn-block">Cadastrar produto</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

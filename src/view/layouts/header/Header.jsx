@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div>
+    <div className='container-geral'>
       <header className="container">
-        <div className="text-center">
-          <h1 className="text-center">Dispensa Caseira</h1>
-        </div>
+        <h1 className="text-center">Dispensa Caseira</h1>
+        
         <div className="text-center">
           <ul className="nav d-flex justify-content-center">
             <li className="nav-item">

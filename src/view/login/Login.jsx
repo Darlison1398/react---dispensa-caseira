@@ -33,7 +33,7 @@ function Login() {
         const { token } = response.data;
         localStorage.setItem('authToken', token);
         login();
-        console.log(token);
+        //console.log(token);
         navigate('/main');
       }
 
@@ -54,7 +54,7 @@ function Login() {
     <div className="container d-flex justify-content-center align-items-center vh-100">
 
       <div className="container-center-center">
-      <Flash type="error" message={error} setMessage={setError} />
+        <Flash type="error" message={error} setMessage={setError} />
         <div className="container">
           <h3 className="text-center">Login</h3>
           <form className="mt-3" onSubmit={handleSubmit}>

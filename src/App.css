@@ -6,3 +6,12 @@
     border-radius: 8px; /* Bordas arredondadas opcionais */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
+
+.container-geral{
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.container-geral header h1 {
+    color: blueviolet;
+}
