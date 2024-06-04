@@ -31,6 +31,7 @@ function Login() {
 
       if (response.status === 200) {
         const { token } = response.data;
+        //localStorage.setItem('userId', userId);
         localStorage.setItem('authToken', token);
         login();
         //console.log(token);

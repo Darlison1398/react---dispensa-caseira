@@ -5,6 +5,7 @@ import Header from "../header/Header";
 import Cadastro from "./Cadastro";
 import ListaProdutos from "./ListaProdutos";
 import Editar from "./Editar";
+import Perfil from "./Perfil";
 
 function Index() {
     return (
@@ -14,6 +15,7 @@ function Index() {
                 <Route path="/" element={<Navigate to="listaProdutos" />} />
                 <Route path="listaProdutos" element={<ListaProdutos />} />
                 <Route path="cadastro" element={<Cadastro />} />
+                <Route path="perfil/:id" element={<Perfil />} />
                 <Route path="editar/:id" element={<Editar />} />
             </Routes>
         </div>
