@@ -15,7 +15,7 @@ function Index() {
                 <Route path="/" element={<Navigate to="listaProdutos" />} />
                 <Route path="listaProdutos" element={<ListaProdutos />} />
                 <Route path="cadastro" element={<Cadastro />} />
-                <Route path="perfil/:id" element={<Perfil />} />
+                <Route path="perfil" element={<Perfil />} />
                 <Route path="editar/:id" element={<Editar />} />
             </Routes>
         </div>

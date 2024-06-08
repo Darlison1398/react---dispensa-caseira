@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 function Header() {
 
-  const userId = localStorage.getItem('id'); 
-
   return (
     <div className='container-geral'>
       <header className="container">
@@ -19,7 +17,7 @@ function Header() {
               <Link to="/main/cadastro" className='nav-link'> Cadastrar produto</Link>
             </li>
             <li className="nav-item">
-              <Link to={`/main/perfil/${userId}`} className='nav-link'>Perfil</Link>
+              <Link to="/main/perfil" className='nav-link'>Perfil</Link>
             </li>
             <li className="nav-item">
               <Link to="/" className='nav-link'>Sair</Link>

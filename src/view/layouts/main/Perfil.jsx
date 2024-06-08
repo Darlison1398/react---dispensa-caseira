@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 
 function Perfil() {
-    const { id } = useParams();
+    const [id, setId] = useState(''); 
     const [nome, setNome] = useState('');
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ function Perfil() {
     useEffect(() => {
         async function fetchUser() {
             try {
-                const response = await fetch(`http://localhost:8282/auth/userById/${id}`, {
+                const response = await fetch('http://localhost:8282/auth/me', {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                     }
@@ -22,6 +22,10 @@ function Perfil() {
 
                 if (response.ok) {
                     const data = await response.json();
+                    
+                    console.log("Fetched user data:", data);
+
+                    setId(data.id); // Definir o ID do usuário
                     setNome(data.nome);
                     setLastname(data.lastname);
                     setEmail(data.email);
@@ -34,7 +38,7 @@ function Perfil() {
         }
 
         fetchUser();
-    }, [id]);
+    }, []);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -47,6 +51,9 @@ function Perfil() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
+
+            console.log("Atualizando usuário com ID:", id);
+
             const response = await fetch(`http://localhost:8282/auth/updateUser/${id}`, {
                 method: 'PUT',
                 headers: {
@@ -113,7 +120,6 @@ function Perfil() {
                             name="password"
                             value={password}
                             onChange={handleChange}
-                            required
                         />
                     </Form.Group>
 
