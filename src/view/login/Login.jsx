@@ -40,7 +40,7 @@ function Login() {
       setError('Erro ao tentar fazer login!');
       setEmail('');
       setPassword('');
-      console.log(error);
+      //console.log(error);
 
       // Limpar o erro após 5 segundos
       setTimeout(() => {
@@ -82,7 +82,7 @@ function Login() {
           </div>
           <div className="col-sm-6">
             <span>Esqueceu a senha?</span><br />
-            <Link to="/">Recuperar senha</Link>
+            <Link to="/recuperarPass">Recuperar senha</Link>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import PrivateRoute from './view/layouts/PrivateRoute';
 
 import Login from './view/login/Login';
 import CriarConta from './view/login/CriarConta';
+import RecuperarSenha from './view/login/RecuperarSenha';
 import Index from './view/layouts/main/Index';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/criarConta" element={<CriarConta />} />
+          <Route path="/recuperarPass" element={<RecuperarSenha />} />
           <Route path="/main/*" element={<PrivateRoute component={Index} />} />
         </Routes>
       </Router>

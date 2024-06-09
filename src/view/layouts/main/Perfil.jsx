@@ -23,7 +23,7 @@ function Perfil() {
                 if (response.ok) {
                     const data = await response.json();
                     
-                    console.log("Fetched user data:", data);
+                    //console.log("Fetched user data:", data);
 
                     setId(data.id); // Definir o ID do usuário
                     setNome(data.nome);
@@ -52,7 +52,7 @@ function Perfil() {
         event.preventDefault();
         try {
 
-            console.log("Atualizando usuário com ID:", id);
+            //console.log("Atualizando usuário com ID:", id);
 
             const response = await fetch(`http://localhost:8282/auth/updateUser/${id}`, {
                 method: 'PUT',
@@ -65,7 +65,7 @@ function Perfil() {
 
             if (response.ok) {
                 alert('Informações do perfil atualizadas com sucesso.');
-                navigate('/perfil');
+                navigate('/main');
             } else {
                 alert('Erro ao atualizar informações do perfil.');
             }
